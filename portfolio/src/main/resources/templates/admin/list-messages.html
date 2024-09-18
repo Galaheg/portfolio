@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Messages Directory</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<!--<span th:text="${employees}"/>-->
+
+<div class="container">
+    <h3>Messages Table</h3>
+    <hr>
+
+   <!-- <a th:href="@{/friends/showFormForAdd}" class="btn btn-primary btn-sm mb-3">
+        Add Friend Manually
+    </a>-->
+
+    <table class="table table-bordered table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempMessage : ${messages}">
+
+            <td th:text="${tempMessage.fullName}"/>
+            <td th:text="${tempMessage.email}"/>
+            <td th:text="${tempMessage.phoneNumber}"/>
+            <td th:text="${tempMessage.message}"/>
+            <!--<td>
+                <a th:href="@{/admins/showFormForUpdate(friendId=${tempFriend.id})}" class="btn btn-info btn-sm">Update</a>
+                <a th:href="@{/admins/showFormForDelete(friendId=${tempFriend.id})}" class="btn btn-danger btn-sm"
+                   onclick="if (!(confirm('Are you sure?'))) return false">Delete</a>
+            </td>-->
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
