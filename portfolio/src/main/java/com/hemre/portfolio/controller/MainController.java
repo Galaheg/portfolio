@@ -45,10 +45,11 @@ public class MainController {
         return "index";
     }
 
-    @PostMapping("saveMessage")
+    @PostMapping("/hemre/saveMessage")
     public String save(@ModelAttribute("theMessage") Message message){
+        System.out.println(" Inside or not?? ");
         messageService.save(message);
-        return "redirect:/hemre/";
+        return "redirect:/hemre";
     }
 
 }

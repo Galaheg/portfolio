@@ -190,7 +190,7 @@ section{
     background: var(--second-bg-color);
 }
 .about-img img{
-    width: 32vw;
+    width: 21vw;
     border: 50%;
     border-radius:50%;
     box-shadow: 0 0 25px var(--main-color);
